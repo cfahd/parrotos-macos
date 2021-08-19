@@ -1,0 +1,9 @@
+autoload -U colors && colors
+RPROMPT="%(?.%F{010}✔.%F{009}✗)%f"
+NEWLINE=$'\n'
+VALID="${NEWLINE}%F{009}┏━[%f%F{010}%n%f%F{011}@%f%F{014}%m%f%F{009}]–[%f%F{010}%~%f%F{009}]${NEWLINE}┗━━━▶%f%F{011} %(!.#.$)%f "
+INVALID="${NEWLINE}%F{009}┏━[✗%f%F{white}]–[%F{010}%n%f%F{011}@%f%F{014}%m%f %F{009}]–[%f%F{010}%~%f%F{009}]${NEWLINE}┗━━━▶%f%F{011} %(!.#.$)%f "
+PS1="%(?.$VALID.$INVALID)"
+export PS1;
+export CLICOLOR=1
+export LSCOLORS=gxexcxdxbxegedabagacad
